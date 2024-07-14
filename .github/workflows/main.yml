@@ -1,0 +1,22 @@
+            - name: AWS CodeBuild runner
+  # You may pin to the exact commit or the version.
+  # uses: neovasili/aws-codebuild@aa69d34f5fcb0ccc1bab4292e2ede6c332bafe38
+  uses: neovasili/aws-codebuild@v1.1.1
+  with:
+    # AWS default region to operate to
+    aws_region: ap-south-1
+    # CodeBuild project name
+    codebuild_job_name:new-project 
+    # CodeBuild project log group name
+    codebuild_log_group: optional
+    # S3 path (including bucket name) where to passthrough repository code to for CodeBuild
+    s3_path: # optional
+    # Relative path to buildspec file in the repo to override the CodeBuild project one
+    buildspec: # optional
+    # SSM parameter path containing the repository of the docker image that will be used for override image
+    override_image_ssm_base: # optional
+    # Optional image tag override to use for override image. Requires `override_image_ssm_base` input
+    override_image_tag: # optional
+    # Optional image tag prefix to use for override image. Requires `override_image_ssm_base` input. Overridden by `override_image_tag` if specified
+    override_image_tag_prefix: # optional
+          
